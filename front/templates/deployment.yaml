@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  {{ .Values.deployment.name }}
+  labels:
+    app:  {{ .Values.service.label }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.app }}
+  template:
+    metadata:
+      labels:
+        app:  {{ .Values.deployment.app }}
+    spec:
+      containers:
+      - name: web
+        image: {{ .Values.deployment.image }}
+        ports:
+        - containerPort: 8000
+        env:
+          {{ range $k, $v := .Values.front_env }}
+          - name: {{ $k | quote }}
+            value: {{ $v | quote }}
+          {{ end }}

@@ -87,7 +87,7 @@ deployment:
   name:
     web-deployment
   image:
-    "public.ecr.aws/l6a6l2j9/back:latest"
+    "public.ecr.aws/l6a6l2j9/back:v2"
   app:
     web
 back_env:

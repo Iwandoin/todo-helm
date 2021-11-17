@@ -11,9 +11,9 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: db
-    repoURL: https://github.com/Iwandoin/todo-helm.git
+    path: bitnami/postgresql
+    repoURL: https://github.com/bitnami/charts.git
     helm:
       valueFiles:
         - db_values.yml
-    targetRevision: HEAD
+    targetRevision: master

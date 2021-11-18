@@ -17,6 +17,10 @@ spec:
       containers:
       - name: web
         image: {{ .Values.deployment.image }}
+        readinessProbe:
+          httpGet:
+            path: /api/todos
+            port: 8000
         ports:
         - containerPort: 8000
         env:

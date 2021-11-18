@@ -21,6 +21,10 @@ spec:
           httpGet:
             path: /api/todos
             port: 8000
+         livenessProbe:
+          httpGet:
+            path: /api/todos
+            port: 8000
         ports:
         - containerPort: 8000
         env:

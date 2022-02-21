@@ -78,7 +78,7 @@ tolerations: []
 affinity: {}
 
 service:
-  ip: "10.43.72.55"
+  #ip: "10.43.72.55"
   type: ClusterIP
   label:
     nginx
